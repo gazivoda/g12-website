@@ -8,6 +8,7 @@ import { Breadcrumbs } from '@/app/components/Breadcrumbs';
 import InteriorGallery from '@/app/components/InteriorGallery';
 import { ApartmentRoomsTable } from '@/app/components/ApartmentRoomsTable';
 import { Apartment } from '@/app/types';
+import Image from 'next/image';
 
 interface ApartmentDetailsProps {
   id: string;
@@ -102,15 +103,17 @@ export function ApartmentDetails({ id }: ApartmentDetailsProps) {
 
               {/* Image */}
               <div className="relative aspect-4/3 bg-white overflow-hidden group cursor-pointer">
-                <img
+                <Image
                   src={selectedView === '3d' ? apartment.image3D : apartment.floorPlan}
                   alt={selectedView === '3d' ? '3D Prikaz' : 'Osnova'}
-                  className="w-full h-full object-contain"
+                  fill
+                  className="object-contain cursor-pointer"
                   onClick={() => openImageModal(selectedView === '3d' ? apartment.image3D : apartment.floorPlan)}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <button
                   onClick={() => openImageModal(selectedView === '3d' ? apartment.image3D : apartment.floorPlan)}
-                  className="absolute top-4 right-4 w-10 h-10 bg-white/90 hover:bg-white flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-all duration-300"
+                  className="absolute top-4 right-4 w-10 h-10 bg-white/90 hover:bg-white flex items-center justify-center text-primary cursor-pointer"
                 >
                   <Maximize2 className="w-5 h-5" />
                 </button>
@@ -198,14 +201,16 @@ export function ApartmentDetails({ id }: ApartmentDetailsProps) {
           onClick={() => setImageModalOpen(false)}
         >
           <button
-            className="absolute top-4 right-4 w-12 h-12 bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+            className="absolute cursor-pointer top-4 right-4 w-12 h-12 bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
             onClick={() => setImageModalOpen(false)}
           >
             <X className="w-6 h-6" />
           </button>
-          <img
+          <Image
             src={modalImage}
             alt="Full size preview"
+            width={1920}
+            height={1080}
             className="max-w-full max-h-full object-contain"
             onClick={(e) => e.stopPropagation()}
           />

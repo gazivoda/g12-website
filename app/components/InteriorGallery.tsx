@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
+import Image from 'next/image';
 
 export default function InteriorGallery() {
   const interiorImgs = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -53,35 +54,38 @@ export default function InteriorGallery() {
           {/* Main */}
           <div className="relative">
             <div className="relative aspect-16/10 bg-white overflow-hidden group">
-              <img
+              <Image
                 src={`/img/vizuali/${interiorImgs[currentInteriorIndex]}.jpg`}
-                className="w-full h-full object-cover cursor-pointer"
+                alt={`Interior ${currentInteriorIndex + 1}`}
+                fill
+                className="object-cover cursor-pointer"
                 onClick={() => openImageModal(currentInteriorIndex)}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
 
               {/* desktop arrows */}
               <button
                 onClick={prevInteriorImage}
-                className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 items-center justify-center opacity-0 group-hover:opacity-100"
+                className="cursor-pointer hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 items-center justify-center opacity-0 group-hover:opacity-100"
               >
                 <ChevronLeft className="w-6 h-6 text-primary" />
               </button>
 
               <button
                 onClick={nextInteriorImage}
-                className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 items-center justify-center opacity-0 group-hover:opacity-100"
+                className="cursor-pointer hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 items-center justify-center opacity-0 group-hover:opacity-100"
               >
                 <ChevronRight className="w-6 h-6 text-primary" />
               </button>
 
               <button
                 onClick={() => openImageModal(currentInteriorIndex)}
-                className="absolute top-4 right-4 w-10 h-10 bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100"
+                className="cursor-pointer absolute top-4 right-4 w-10 h-10 bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100"
               >
                 <Maximize2 className="w-5 h-5 text-primary" />
               </button>
 
-              <div className="absolute bottom-4 left-4 bg-primary text-white px-4 py-2 text-xs">
+              <div className="cursor-pointer absolute bottom-4 left-4 bg-primary text-white px-4 py-2 text-xs">
                 {currentInteriorIndex + 1} / {interiorImgs.length}
               </div>
             </div>
@@ -92,15 +96,18 @@ export default function InteriorGallery() {
                 <button
                   key={num}
                   onClick={() => setCurrentInteriorIndex(index)}
-                  className={`aspect-square overflow-hidden ${
+                  className={`relative aspect-square overflow-hidden cursor-pointer ${
                     currentInteriorIndex === index
                       ? "ring-2 ring-accent ring-offset-2"
                       : "opacity-60 hover:opacity-100"
                   }`}
                 >
-                  <img
+                  <Image
                     src={`/img/vizuali/${num}.jpg`}
-                    className="w-full h-full object-cover"
+                    alt={`Interior ${num}`}
+                    fill
+                    className="object-cover"
+                    sizes="100px"
                   />
                 </button>
               ))}
@@ -117,8 +124,11 @@ export default function InteriorGallery() {
           <div className="absolute inset-0" onClick={closeModal} />
 
           {/* image with click left/right */}
-          <img
+          <Image
             src={`/img/vizuali/${interiorImgs[modalIndex]}.jpg`}
+            alt={`Interior ${modalIndex + 1}`}
+            width={1920}
+            height={1080}
             className="max-w-[95vw] max-h-[90vh] object-contain relative z-20 cursor-pointer"
             onClick={(e) => {
               const rect = e.currentTarget.getBoundingClientRect();
@@ -134,7 +144,7 @@ export default function InteriorGallery() {
           {/* close */}
           <button
             onClick={closeModal}
-            className="absolute top-6 right-6 w-12 h-12 bg-white z-30 flex items-center justify-center"
+            className="cursor-pointer absolute top-6 right-6 w-12 h-12 bg-white z-30 flex items-center justify-center"
           >
             <X className="w-6 h-6 text-primary" />
           </button>
@@ -142,14 +152,14 @@ export default function InteriorGallery() {
           {/* desktop arrows */}
           <button
             onClick={prevModalImage}
-            className="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 w-14 h-14 bg-white z-30 items-center justify-center"
+            className="cursor-pointer hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 w-14 h-14 bg-white z-30 items-center justify-center"
           >
             <ChevronLeft className="w-7 h-7 text-primary" />
           </button>
 
           <button
             onClick={nextModalImage}
-            className="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 w-14 h-14 bg-white z-30 items-center justify-center"
+            className="cursor-pointer hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 w-14 h-14 bg-white z-30 items-center justify-center"
           >
             <ChevronRight className="w-7 h-7 text-primary" />
           </button>
