@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Logo & About */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 mb-4">
               <div className="relative w-14 h-14 flex items-center justify-center">
                 <Image
                   src="/img/logo.png"
@@ -69,7 +69,14 @@ export function Footer() {
               target="_blank"
               className="block hover:text-accent transition-colors"
             >
-              Remington Christie&apos;s
+              <Image
+                src="/img/remington-logo.png"
+                alt="Remington Christie's logo"
+                width={250}  // ~48 u Tailwind jedinicama (12rem)
+                height={80}  // ~16 u Tailwind jedinicama (4rem)
+                className="object-contain"
+                priority
+              />
             </Link>
           </div>
         </div>

@@ -116,7 +116,7 @@ export function Apartments() {
                       src={apartment.image3D}
                       alt={`${apartment.name} 3D Pogled`}
                       fill
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="absolute inset-0 w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
                     />
                     {/* Dark overlay gradient - hidden on mobile */}
                     <div className="hidden lg:block absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"></div>
@@ -167,7 +167,7 @@ export function Apartments() {
                 {/* Right Side - Room Details */}
                 <div className="lg:w-[45%] p-4 sm:p-8 flex flex-col">
                   {/* Mobile Info Header - visible only on mobile */}
-                  <div className="lg:hidden mb-4 pb-4 border-b border-accent-light/30">
+                  <div className="lg:hidden mb-6 pb-4 border-b border-accent-light/30">
                     <div className="flex items-center justify-between gap-2 sm:gap-4">
                       <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
                         <div className="text-center shrink-0">
@@ -202,8 +202,8 @@ export function Apartments() {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between mb-4 sm:mb-6">
-                    <h3 className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary-light font-medium">
+                  <div className="flex items-center justify-between mb-2 sm:mb-6">
+                    <h3 className="text-[11px] sm:text-xs uppercase tracking-[0.3em] text-primary-light font-medium">
                       Prostorije
                     </h3>
                   </div>

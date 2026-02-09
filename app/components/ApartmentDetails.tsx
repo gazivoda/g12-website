@@ -80,7 +80,7 @@ export function ApartmentDetails({ id }: ApartmentDetailsProps) {
               <div className="flex gap-2">
                 <button
                   onClick={() => setSelectedView('3d')}
-                  className={`px-4 py-2 text-xs uppercase tracking-wider transition-colors ${
+                  className={`px-4 py-2 text-xs uppercase tracking-wider transition-colors cursor-pointer ${
                     selectedView === '3d'
                       ? 'bg-accent text-white'
                       : 'bg-white text-primary-light hover:bg-accent hover:text-white'
@@ -90,7 +90,7 @@ export function ApartmentDetails({ id }: ApartmentDetailsProps) {
                 </button>
                 <button
                   onClick={() => setSelectedView('floor')}
-                  className={`px-4 py-2 text-xs uppercase tracking-wider transition-colors ${
+                  className={`px-4 py-2 text-xs uppercase tracking-wider transition-colors cursor-pointer ${
                     selectedView === 'floor'
                       ? 'bg-accent text-white'
                       : 'bg-white text-primary-light hover:bg-accent hover:text-white'
@@ -120,37 +120,43 @@ export function ApartmentDetails({ id }: ApartmentDetailsProps) {
             {/* Right Column - Info */}
             <div className="space-y-8 mt-12">
               {/* Key Stats - 4 Squares */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-white p-6 border-l-4 border-accent">
                   <div className="text-4xl font-bold text-accent mb-2">{apartment.totalArea}</div>
                   <div className="text-xs uppercase tracking-widest text-primary-light">Ukupna površina m²</div>
                 </div>
                 <div className="bg-white p-6 border-l-4 border-accent-light">
-                  <div className="text-3xl font-bold text-primary mt-2 mb-2">{ apartment.type }</div>
+                  <div className="text-3xl font-bold text-primary mt-2 mb-2">{apartment.type}</div>
                   <div className="text-xs uppercase tracking-widest text-primary-light">Prostorije</div>
                 </div>
                 <div className="bg-white p-6 border-l-4 border-accent">
                   <div className="text-3xl font-bold text-accent mb-2">
-                    { apartment.floor === 0 ? 'Prizemlje' : `Sprat ${apartment.floor}` }
+                    {apartment.floor === 0 ? 'Prizemlje' : `Sprat ${apartment.floor}`}
                   </div>
                   <div className="text-xs uppercase tracking-widest text-primary-light">Sprat</div>
                 </div>
                 <div className="bg-white p-6 border-l-4 border-accent-light">
-                  <div className="text-3xl font-bold text-primary mb-2">{ apartment.orientation }</div>
+                  <div className="text-3xl font-bold text-primary mb-2">{apartment.orientation}</div>
                   <div className="text-xs uppercase tracking-widest text-primary-light">Orijentacija</div>
                 </div>
               </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="flex-1 bg-accent hover:bg-[#3d8a7b] text-white py-4 px-6 transition-colors text-sm uppercase tracking-widest font-medium flex items-center justify-center gap-2">
+                <button
+                  onClick={() => window.location.href = 'tel:+381634777715'}
+                  className="flex-1 cursor-pointer bg-accent hover:bg-[#3d8a7b] text-white py-4 px-6 transition-colors text-sm uppercase tracking-widest font-medium flex items-center justify-center gap-2"
+                >
                   <Phone className="w-4 h-4" />
                   <span>Pozovite</span>
                 </button>
-                <button className="flex-1 bg-primary hover:bg-[#5a4e42] text-white py-4 px-6 transition-colors text-sm uppercase tracking-widest font-medium flex items-center justify-center gap-2">
+                <Link
+                  href="/contact"
+                  className="flex-1 cursor-pointer bg-primary hover:bg-[#5a4e42] text-white py-4 px-6 transition-colors text-sm uppercase tracking-widest font-medium flex items-center justify-center gap-2"
+                >
                   <Mail className="w-4 h-4" />
                   <span>Pošaljite Upit</span>
-                </button>
+                </Link>
               </div>
             </div>
           </div>

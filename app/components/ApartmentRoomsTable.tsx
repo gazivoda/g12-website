@@ -45,7 +45,7 @@ export const ApartmentRoomsTable: FC<ApartmentRoomsTableProps> = ({
       {apartment.rooms.map((room, index) => (
         <div
           key={`${room.number}-${index}`}
-          className="flex items-center justify-between px-6 py-4 border-b border-accent-light/30 last:border-0 hover:bg-cream/50 transition-colors"
+          className="flex items-center justify-between px-2 sm:px-6 py-4 border-b border-accent-light/30 last:border-0 hover:bg-cream/50 transition-colors"
         >
           <div className="flex items-center gap-4">
             <div>{getRoomIcon(room.name)}</div>
