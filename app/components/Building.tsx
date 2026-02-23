@@ -3,8 +3,8 @@
 export function Building() {
   const features = [
     {
-      title: "Fasada od Travertin kamena",
-      description: "Zgrada je izvedena sa modernom i elegantnom fasadom obloženom travertin kamenom.",
+      title: "Fasada od vrhunskih materijala",
+      description: "Zgrada je izvedena sa modernom i elegantnom fasadom od kamena, aluminijuma, stakla i opeke.",
       accent: true,
     },
     {

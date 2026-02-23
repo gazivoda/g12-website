@@ -13,7 +13,7 @@ export function Apartments() {
   const allApartments = Object.values(apartmentsByFloor).flat();
 
   // Define room types with Serbian labels
-  const typeOrder = ['Garsonjera', 'Jednosoban', 'Dvosoban', 'Trosoban', 'Četvorosoban'];
+  const typeOrder = ['Jednosoban', 'Dvosoban', 'Trosoban', 'Četvorosoban'];
 
   const roomTypes = [
     { id: 'all', label: 'Svi stanovi' },
@@ -35,6 +35,12 @@ export function Apartments() {
     if (type === 'all') return allApartments.length;
     return allApartments.filter(apt => apt.type === type).length;
   };
+
+  const getPluralForm = (n: number) => {
+    if (n % 10 === 1 && n % 100 !== 11) return 'stan';
+    if (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)) return 'stana';
+    return 'stanova';
+  }
 
   return (
     <section className="py-36 bg-cream relative overflow-hidden">
@@ -93,14 +99,13 @@ export function Apartments() {
                     {roomType.label}
                   </div>
                   <div className="text-xs mt-1 opacity-80">
-                    {apartmentCount} {apartmentCount === 1 ? 'stan' : 'stana'}
+                    {apartmentCount} {getPluralForm(apartmentCount)}
                   </div>
                 </button>
               );
             })}
           </div>
         </div>
-
 
         {/* Apartments Grid */}
         <div className="grid gap-6">
@@ -119,10 +124,10 @@ export function Apartments() {
                       className="absolute inset-0 w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
                     />
                     {/* Dark overlay gradient - hidden on mobile */}
-                    <div className="hidden lg:block absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"></div>
+                    {/*<div className="hidden lg:block absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"></div>*/}
 
                     {/* Key Information Overlay - hidden on mobile */}
-                    <div className="hidden lg:block absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <div className="hidden lg:block absolute bottom-0 left-0 right-0 p-8 text-white bg-black/70">
                       <div className="flex items-end justify-between gap-6">
                         <div className="flex items-center gap-6">
                           {/* Floor */}

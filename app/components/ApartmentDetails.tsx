@@ -76,52 +76,118 @@ export function ApartmentDetails({ id }: ApartmentDetailsProps) {
           {/* Main Content Grid */}
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Left Column - Image Display */}
-            <div className="space-y-4">
-              {/* Image Tabs */}
-              <div className="flex gap-2">
-                <button
-                  onClick={() => setSelectedView('3d')}
-                  className={`px-4 py-2 text-xs uppercase tracking-wider transition-colors cursor-pointer ${
-                    selectedView === '3d'
-                      ? 'bg-accent text-white'
-                      : 'bg-white text-primary-light hover:bg-accent hover:text-white'
-                  }`}
-                >
-                  3D Prikaz
-                </button>
-                <button
-                  onClick={() => setSelectedView('floor')}
-                  className={`px-4 py-2 text-xs uppercase tracking-wider transition-colors cursor-pointer ${
-                    selectedView === 'floor'
-                      ? 'bg-accent text-white'
-                      : 'bg-white text-primary-light hover:bg-accent hover:text-white'
-                  }`}
-                >
-                  Osnova
-                </button>
-              </div>
+            {/*<div className="space-y-4">*/}
+            {/*  /!* Image Tabs *!/*/}
+            {/*  <div className="flex gap-2">*/}
+            {/*    <button*/}
+            {/*      onClick={() => setSelectedView('3d')}*/}
+            {/*      className={`px-4 py-2 text-xs uppercase tracking-wider transition-colors cursor-pointer ${*/}
+            {/*        selectedView === '3d'*/}
+            {/*          ? 'bg-accent text-white'*/}
+            {/*          : 'bg-white text-primary-light hover:bg-accent hover:text-white'*/}
+            {/*      }`}*/}
+            {/*    >*/}
+            {/*      3D Prikaz*/}
+            {/*    </button>*/}
+            {/*    <button*/}
+            {/*      onClick={() => setSelectedView('floor')}*/}
+            {/*      className={`px-4 py-2 text-xs uppercase tracking-wider transition-colors cursor-pointer ${*/}
+            {/*        selectedView === 'floor'*/}
+            {/*          ? 'bg-accent text-white'*/}
+            {/*          : 'bg-white text-primary-light hover:bg-accent hover:text-white'*/}
+            {/*      }`}*/}
+            {/*    >*/}
+            {/*      Osnova*/}
+            {/*    </button>*/}
+            {/*  </div>*/}
 
-              {/* Image */}
-              <div className="relative aspect-4/3 bg-white overflow-hidden group cursor-pointer">
+            {/*  /!* Image *!/*/}
+            {/*  <div className="relative aspect-4/3 bg-white overflow-hidden group cursor-pointer">*/}
+            {/*    <Image*/}
+            {/*      src={selectedView === '3d' ? apartment.image3D : apartment.floorPlan}*/}
+            {/*      alt={selectedView === '3d' ? '3D Prikaz' : 'Osnova'}*/}
+            {/*      fill*/}
+            {/*      className="object-contain cursor-pointer"*/}
+            {/*      onClick={() => openImageModal(selectedView === '3d' ? apartment.image3D : apartment.floorPlan)}*/}
+            {/*      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"*/}
+            {/*    />*/}
+            {/*    <button*/}
+            {/*      onClick={() => openImageModal(selectedView === '3d' ? apartment.image3D : apartment.floorPlan)}*/}
+            {/*      className="absolute top-4 right-4 w-10 h-10 bg-white/90 hover:bg-white flex items-center justify-center text-primary cursor-pointer"*/}
+            {/*    >*/}
+            {/*      <Maximize2 className="w-5 h-5" />*/}
+            {/*    </button>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+
+            <div className="space-y-4">
+              {/* Main Image */}
+              <div className="relative aspect-[4/3] bg-white overflow-hidden group cursor-pointer">
                 <Image
                   src={selectedView === '3d' ? apartment.image3D : apartment.floorPlan}
                   alt={selectedView === '3d' ? '3D Prikaz' : 'Osnova'}
                   fill
                   className="object-contain cursor-pointer"
                   onClick={() => openImageModal(selectedView === '3d' ? apartment.image3D : apartment.floorPlan)}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <button
                   onClick={() => openImageModal(selectedView === '3d' ? apartment.image3D : apartment.floorPlan)}
-                  className="absolute top-4 right-4 w-10 h-10 bg-white/90 hover:bg-white flex items-center justify-center text-primary cursor-pointer"
+                  className="absolute top-4 right-4 w-10 h-10 bg-white/90 hover:bg-white flex items-center justify-center text-[#6b5d4f] opacity-0 group-hover:opacity-100 transition-all duration-300"
                 >
                   <Maximize2 className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Thumbnail Gallery */}
+              <div className="flex gap-3">
+                {/* 3D Prikaz Thumbnail */}
+                <button
+                  onClick={() => setSelectedView('3d')}
+                  className={`relative aspect-[4/3] w-32 bg-white overflow-hidden transition-all duration-300 ${
+                    selectedView === '3d'
+                      ? 'ring-2 ring-[#4a9d8e] ring-offset-2'
+                      : 'opacity-60 hover:opacity-100'
+                  }`}
+                >
+                  <Image
+                    src={apartment.image3D}
+                    alt="3D Prikaz"
+                    fill
+                    className="object-contain cursor-pointer"
+                  />
+                  {selectedView === '3d' && (
+                    <div className="absolute bottom-0 left-0 right-0 bg-[#4a9d8e] text-white text-[10px] uppercase tracking-wider py-1 px-2 text-center">
+                      3D Prikaz
+                    </div>
+                  )}
+                </button>
+
+                {/* Osnova Thumbnail */}
+                <button
+                  onClick={() => setSelectedView('floor')}
+                  className={`relative aspect-[4/3] w-32 bg-white overflow-hidden transition-all duration-300 ${
+                    selectedView === 'floor'
+                      ? 'ring-2 ring-[#4a9d8e] ring-offset-2'
+                      : 'opacity-60 hover:opacity-100'
+                  }`}
+                >
+                  <Image
+                    src={apartment.floorPlan}
+                    alt="Osnova"
+                    fill
+                    className="object-contain cursor-pointer"
+                  />
+                  {selectedView === 'floor' && (
+                    <div className="absolute bottom-0 left-0 right-0 bg-[#4a9d8e] text-white text-[10px] uppercase tracking-wider py-1 px-2 text-center">
+                      Osnova
+                    </div>
+                  )}
                 </button>
               </div>
             </div>
 
             {/* Right Column - Info */}
-            <div className="space-y-8 mt-12">
+            <div className="space-y-8">
               {/* Key Stats - 4 Squares */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-white p-6 border-l-4 border-accent">
@@ -147,7 +213,7 @@ export function ApartmentDetails({ id }: ApartmentDetailsProps) {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  onClick={() => window.location.href = 'tel:+381634777715'}
+                  onClick={() => window.location.href = 'tel:+381658778202'}
                   className="flex-1 cursor-pointer bg-accent hover:bg-[#3d8a7b] text-white py-4 px-6 transition-colors text-sm uppercase tracking-widest font-medium flex items-center justify-center gap-2"
                 >
                   <Phone className="w-4 h-4" />
@@ -201,7 +267,7 @@ export function ApartmentDetails({ id }: ApartmentDetailsProps) {
           onClick={() => setImageModalOpen(false)}
         >
           <button
-            className="absolute cursor-pointer top-4 right-4 w-12 h-12 bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+            className="absolute cursor-pointer top-4 right-4 w-12 h-12 bg-white hover:bg-white/20 flex items-center justify-center transition-colors"
             onClick={() => setImageModalOpen(false)}
           >
             <X className="w-6 h-6" />

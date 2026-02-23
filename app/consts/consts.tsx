@@ -11,22 +11,22 @@ export function getAllApartments(): Apartment[] {
 
 export const apartmentsByFloor: ApartmentsByFloor = {
   0: [
-    {
-      id: "garsonjera-stan-2",
-      name: "Stan 2",
-      floor: 0,
-      type: "Garsonjera",
-      orientation: "Sever",
-      image3D: "/img/apartments/prizemlje-stan-2.jpg",
-      floorPlan: "/img/apartments/prizemlje-stan-2-pozicija.jpg",
-      rooms: [
-        { number: 1, name: "Predsoblje", size: "1.89" },
-        { number: 2, name: "Kupatilo", size: "3.60" },
-        { number: 3, name: "Kuhinja", size: "4.83" },
-        { number: 4, name: "Trpezarija i kombinovana soba", size: "17.34" }
-      ],
-      totalArea: "27.66"
-    },
+    // {
+    //   id: "garsonjera-stan-2",
+    //   name: "Stan 2",
+    //   floor: 0,
+    //   type: "Garsonjera",
+    //   orientation: "Sever",
+    //   image3D: "/img/apartments/prizemlje-stan-2.png",
+    //   floorPlan: "/img/apartments/prizemlje-stan-2-pozicija.jpg",
+    //   rooms: [
+    //     { number: 1, name: "Predsoblje", size: "1.89" },
+    //     { number: 2, name: "Kupatilo", size: "3.60" },
+    //     { number: 3, name: "Kuhinja", size: "4.83" },
+    //     { number: 4, name: "Trpezarija i kombinovana soba", size: "17.34" }
+    //   ],
+    //   totalArea: "27.66"
+    // },
     {
       id: "jednosoban-stan-3",
       name: "Stan 3",

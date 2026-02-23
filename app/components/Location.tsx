@@ -1,7 +1,6 @@
 'use client';
 
 import { Train, ShoppingBag, Dumbbell, Cross } from "lucide-react";
-import Image from 'next/image';
 
 export function Location() {
   const amenities = [
@@ -56,14 +55,17 @@ export function Location() {
             {/* Image Placeholder */}
             <div className="lg:col-span-2">
               <div className="relative aspect-square bg-primary/10 flex items-center justify-center">
-                <Image
-                  src="/img/location.png"
-                  alt="Lokacija"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                {/* Overlay badge */}
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.1438230776043!2d20.488641799999996!3d44.79825749999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a70788b4295fd%3A0xc6e2cbdb19797be3!2sGoluba%C4%8Dka%2012%2C%20Beograd%2011050!5e0!3m2!1sen!2srs!4v1770056794532!5m2!1sen!2srs"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="absolute inset-0"
+                  title="G12 Lokacija"
+                ></iframe>
                 <div className="absolute bottom-0 left-0 right-0 bg-accent/95 backdrop-blur-sm text-white p-6">
                   <div className="text-xs uppercase tracking-widest mb-1 text-accent-light">Lokacija</div>
                   <div className="text-2xl">Golubačka 12, Vračar</div>
@@ -93,26 +95,26 @@ export function Location() {
         </div>
 
         {/* Amenities Section */}
-        <div className="bg-cream -mx-8 px-8 py-16 mt-16">
+        <div className="bg-cream -mx-8 px-8 py-14 mt-16">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-xs uppercase tracking-[0.3em] text-primary-light mb-16 text-center">U neposrednoj blizini</h3>
+            <h3 className="text-sm uppercase tracking-[0.3em] text-primary-light mb-10 text-center">U neposrednoj blizini</h3>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
               {amenities.map((amenity, index) => (
                 <div key={index} className="flex flex-col items-center text-center group">
                   <div className="mb-2 relative">
                     <div className="w-20 h-20 flex items-center justify-center">
-                      <amenity.icon className="w-10 h-10 text-primary transition-all duration-300 group-hover:scale-110" strokeWidth={1} />
+                      <amenity.icon className="w-14 h-14 text-primary transition-all duration-300 group-hover:scale-110" strokeWidth={1} />
                     </div>
                   </div>
-                  <h4 className="text-sm text-primary font-medium mb-2">{amenity.title}</h4>
-                  <p className="text-xs text-primary-light leading-relaxed">{amenity.description}</p>
+                  <h4 className="text-md text-primary font-medium mb-1">{amenity.title}</h4>
+                  <p className="text-sm text-primary-light leading-relaxed">{amenity.description}</p>
                 </div>
               ))}
             </div>
 
             {/* Additional amenities */}
-            <div className="mt-16 pt-12 border-t border-accent-light/40 text-center">
+            <div className="mt-10 pt-10 border-t border-accent-light/40 text-center">
               <p className="text-sm text-primary-light leading-relaxed">
                 Kafići • Restorani • Vrtići • Crkva • Beogradsko dramsko pozorište • Dečije igraonice
               </p>

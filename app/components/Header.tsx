@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from 'next/image';
+import { Phone } from 'lucide-react';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +30,14 @@ export function Header() {
           <Link href="/contact" className="text-primary hover:text-accent transition-colors text-sm uppercase tracking-widest">
             Kontakt
           </Link>
+          {/* Phone Link */}
+          <a
+            href="tel:+381658778202"
+            className="flex items-center gap-2 text-sm text-[#4a9d8e] hover:text-[#6b5d4f] transition-colors border-l border-[#d4c5b0]/80 pl-8"
+          >
+            <Phone className="w-4 h-4" />
+            <span className="font-medium">+381 65 877 8202</span>
+          </a>
         </nav>
 
         {/* Mobile menu button */}
@@ -45,29 +54,39 @@ export function Header() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border-b border-accent-light/10">
-          <nav className="max-w-7xl mx-auto px-8 py-6 flex flex-col gap-4">
+        <div className="md:hidden  border-b border-accent-light/10">
+          <nav className="flex flex-col px-6 py-4">
             <Link
               href="/"
-              className="text-primary hover:text-accent transition-colors text-sm uppercase tracking-widest"
+              className="py-3 text-sm uppercase tracking-wider text-[#6b5d4f] hover:text-[#4a9d8e] transition-colors border-b border-[#d4c5b0]/60 last:border-0"
               onClick={() => setIsOpen(false)}
             >
               Početna
             </Link>
             <Link
               href="/apartments"
-              className="text-primary hover:text-accent transition-colors text-sm uppercase tracking-widest"
+              className="py-3 text-sm uppercase tracking-wider text-[#6b5d4f] hover:text-[#4a9d8e] transition-colors border-b border-[#d4c5b0]/60 last:border-0"
               onClick={() => setIsOpen(false)}
             >
               Stanovi
             </Link>
             <Link
               href="/contact"
-              className="text-primary hover:text-accent transition-colors text-sm uppercase tracking-widest"
+              className="py-3 text-sm uppercase tracking-wider text-[#6b5d4f] hover:text-[#4a9d8e] transition-colors border-b border-[#d4c5b0]/60 last:border-0"
               onClick={() => setIsOpen(false)}
             >
               Kontakt
             </Link>
+
+            {/* Phone Link in Mobile Menu */}
+            <a
+              href="tel:+381234567890"
+              onClick={() => setIsOpen(false)}
+              className="py-3 flex items-center gap-2 text-sm text-[#4a9d8e] hover:text-[#6b5d4f] transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              <span className="font-medium">+381 23 456 7890</span>
+            </a>
           </nav>
         </div>
       )}

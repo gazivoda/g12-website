@@ -34,15 +34,15 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-xs uppercase tracking-[0.3em] mb-6 text-accent-light">Kontakt</h3>
-            <div className="space-y-4 text-sm">
-              <a href="tel:+381 63 477715" className="flex items-center gap-3 hover:text-accent transition-colors">
+            <h3 className="text-sm uppercase tracking-[0.3em] mb-6 text-accent-light">Kontakt</h3>
+            <div className="space-y-4 text-md">
+              <a href="tel:+381658778202" className="flex items-center gap-3 hover:text-accent transition-colors">
                 <Phone className="w-4 h-4 text-accent" />
-                <span>+381 63 477 715</span>
+                <span>+381 65 877 8202</span>
               </a>
-              <a href="mailto:g12doobeograd@outlook.com" className="flex items-center gap-3 hover:text-accent transition-colors">
+              <a href="mailto:office@remingtonchristies.rs" className="flex items-center gap-3 hover:text-accent transition-colors">
                 <Mail className="w-4 h-4 text-accent" />
-                <span>g12doobeograd@outlook.com</span>
+                <span>office@remingtonchristies.rs</span>
               </a>
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-accent mt-1" />
@@ -53,8 +53,8 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xs uppercase tracking-[0.3em] mb-6 text-accent-light">Linkovi</h3>
-            <nav className="space-y-3 text-sm">
+            <h3 className="text-sm uppercase tracking-[0.3em] mb-6 text-accent-light">Linkovi</h3>
+            <nav className="space-y-3 text-md">
               <Link href="/" className="block hover:text-accent transition-colors">Početna</Link>
               <Link href="/apartments" className="block hover:text-accent transition-colors">Stanovi</Link>
               <Link href="/contact" className="block hover:text-accent transition-colors">Kontakt</Link>
@@ -83,12 +83,8 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-accent-light">
+          <div className="flex justify-center text-sm text-accent-light">
             <p>© 2026 G12 Crveni Krst. Sva prava zadržana.</p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition-colors">Politika privatnosti</a>
-              <a href="#" className="hover:text-white transition-colors">Uslovi korišćenja</a>
-            </div>
           </div>
         </div>
       </div>
