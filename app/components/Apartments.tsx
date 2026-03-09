@@ -116,7 +116,7 @@ export function Apartments() {
 
                 {/* Left Side - Image with Overlay Info */}
                 <div className="lg:w-[55%] relative lg:flex lg:flex-col">
-                  <div className="aspect-16/10 lg:aspect-auto lg:flex-1 relative overflow-hidden bg-cream">
+                  <div className="bg-white aspect-16/10 lg:aspect-auto lg:flex-1 relative overflow-hidden">
                     <Image
                       src={apartment.image3D}
                       alt={`${apartment.name} 3D Pogled`}
@@ -127,7 +127,7 @@ export function Apartments() {
                     {/*<div className="hidden lg:block absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"></div>*/}
 
                     {/* Key Information Overlay - hidden on mobile */}
-                    <div className="hidden lg:block absolute bottom-0 left-0 right-0 p-8 text-white bg-black/70">
+                    <div className="hidden lg:block absolute bottom-0 left-0 right-0 p-8 pt-6 text-white bg-black/70">
                       <div className="flex items-end justify-between gap-6">
                         <div className="flex items-center gap-6">
                           {/* Floor */}
