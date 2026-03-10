@@ -4,8 +4,8 @@ import { Footer } from "../components/Footer";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Dostupni Apartmani | G12 Crveni Krst",
-  description: "Pregledajte sve dostupne apartmane u G12 kompleksu na Crvenom Krstu. Jednosobni, dvosobni i trosobni stanovi.",
+  title: "Dostupni stanovi | G12 Crveni Krst",
+  description: "Pregledajte sve dostupne stanove u G12 kompleksu na Crvenom Krstu. Jednosobni, dvosobni, trosobni i cetvorosobni stanovi.",
 };
 
 export default function ApartmentsPage() {

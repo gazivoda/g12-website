@@ -13,7 +13,7 @@ export const apartmentsByFloor: ApartmentsByFloor = {
   0: [
     // {
     //   id: "garsonjera-stan-2",
-    //   name: "Stan 2",
+    //   name: "2. Sprat stan 2",
     //   floor: 0,
     //   type: "Garsonjera",
     //   orientation: "Sever",
@@ -29,7 +29,7 @@ export const apartmentsByFloor: ApartmentsByFloor = {
     // },
     {
       id: "jednosoban-stan-3",
-      name: "Stan 3",
+      name: "Prizemlje stan 03",
       floor: 0,
       type: "Jednosoban",
       orientation: "Severoistok",
@@ -45,7 +45,7 @@ export const apartmentsByFloor: ApartmentsByFloor = {
     },
     {
       id: "trosoban-stan-4",
-      name: "Stan 4",
+      name: "Prizemlje stan 04",
       floor: 0,
       type: "Trosoban",
       orientation: "Istok",
@@ -69,7 +69,7 @@ export const apartmentsByFloor: ApartmentsByFloor = {
   1: [
     {
       id: "trosoban-stan-6",
-      name: "Stan 6",
+      name: "1. Sprat stan 06",
       floor: 1,
       type: "Trosoban",
       orientation: "Jugozapad",
@@ -91,7 +91,7 @@ export const apartmentsByFloor: ApartmentsByFloor = {
     },
     {
       id: "trosoban-stan-7",
-      name: "Stan 7",
+      name: "1. Sprat stan 07",
       floor: 1,
       type: "Trosoban",
       orientation: "Severozapad",
@@ -113,7 +113,7 @@ export const apartmentsByFloor: ApartmentsByFloor = {
     },
     {
       id: "trosoban-stan-9",
-      name: "Stan 9",
+      name: "1. Sprat stan 09",
       floor: 1,
       type: "Trosoban",
       orientation: "Istok",
@@ -137,7 +137,7 @@ export const apartmentsByFloor: ApartmentsByFloor = {
   2: [
     {
       id: "trosoban-stan-11",
-      name: "Stan 11",
+      name: "2. Sprat stan 11",
       floor: 2,
       type: "Trosoban",
       orientation: "Severozapad",
@@ -159,7 +159,7 @@ export const apartmentsByFloor: ApartmentsByFloor = {
     },
     {
       id: "trosoban-stan-13",
-      name: "Stan 13",
+      name: "2. Sprat stan 13",
       floor: 2,
       type: "Trosoban",
       orientation: "Istok",
@@ -183,7 +183,7 @@ export const apartmentsByFloor: ApartmentsByFloor = {
   3: [
     {
       id: "cetvorosoban-stan-14",
-      name: "Stan 14",
+      name: "3. Sprat stan 14",
       floor: 3,
       type: "Četvorosoban",
       orientation: "Jugozapad",
@@ -205,7 +205,7 @@ export const apartmentsByFloor: ApartmentsByFloor = {
     },
     {
       id: "cetvorosoban-stan-15",
-      name: "Stan 15",
+      name: "3. Sprat stan 15",
       floor: 3,
       type: "Četvorosoban",
       orientation: "Severozapad",
@@ -231,7 +231,7 @@ export const apartmentsByFloor: ApartmentsByFloor = {
   4: [
     {
       id: "dvosoban-stan-18",
-      name: "Stan 18",
+      name: "4. Sprat stan 18",
       floor: 4,
       type: "Dvosoban",
       orientation: "Jugozapad",
@@ -250,7 +250,7 @@ export const apartmentsByFloor: ApartmentsByFloor = {
     },
     {
       id: "cetvorosoban-stan-19",
-      name: "Stan 19",
+      name: "4. Sprat stan 19",
       floor: 4,
       type: "Četvorosoban",
       orientation: "Severozapad",
@@ -280,7 +280,7 @@ export const apartmentsByFloor: ApartmentsByFloor = {
   5: [
     {
       id: "dvosoban-stan-22",
-      name: "Stan 22",
+      name: "5. Sprat stan 22",
       floor: 5,
       type: "Dvosoban",
       orientation: "Jugozapad",
@@ -299,7 +299,7 @@ export const apartmentsByFloor: ApartmentsByFloor = {
     },
     {
       id: "trosoban-stan-25",
-      name: "Stan 25",
+      name: "5. Sprat stan 25",
       floor: 5,
       type: "Trosoban",
       orientation: "Istok",
